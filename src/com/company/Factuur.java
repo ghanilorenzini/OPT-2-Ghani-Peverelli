@@ -29,8 +29,6 @@ public class Factuur {
     public Klant getKlant(){
         return klant;
     }
-    public Factuur(int factuurNr, String factuurDatum) {
-    }
 
     public int getFactuurNummer() {
         return factuurNummer;
