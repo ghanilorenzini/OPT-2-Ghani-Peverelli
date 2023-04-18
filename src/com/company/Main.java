@@ -49,16 +49,14 @@ public class Main {
         System.out.print("Voer de factuurdatum in (dd-mm-yyyy): ");
         String factuurDatum = scanner.next();
 
-        Factuur factuur = new Factuur(factuurNr, factuurDatum);
 
         // Bereken de kosten voor Afstand en Uren
         double kostenAfstand = afstand.berekenKosten();
         double kostenUren = uren.berekenKosten();
 
         // Bereken het totaalbedrag van de Factuur
-        double totaalBedrag = factuur.berekenTotaalBedrag(kostenAfstand, kostenUren);
-
-        PrintFactuur printFactuur = new PrintFactuur(zzper, klant, uren, afstand, factuur);
+        Factuur factuur = new Factuur(zzper, klant, factuurNr, factuurDatum, kostenAfstand, kostenUren);
+        PrintFactuur printFactuur = new PrintFactuur(uren, afstand, factuur);
 
         // Druk de factuur af
         printFactuur.printFactuur();
